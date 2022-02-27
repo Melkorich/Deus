@@ -1,0 +1,43 @@
+@mixin flexb() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flexc() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin line-climp($row) {
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $row; 
+  -webkit-box-orient: vertical;
+  display: -webkit-box; 
+} 
+
+@mixin maxw($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin minw($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+  
+@mixin maxh($width) {
+  @media (max-height: $width) {
+    @content;
+  }
+}
+  
+@mixin minh($width) {
+  @media (min-height: $width) {
+    @content;
+  }
+} 

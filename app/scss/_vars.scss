@@ -1,0 +1,65 @@
+//main sceren sizes
+$xxl: 1400px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+$xs: 480px;
+$xsm: 320px;
+
+
+//main colors
+:root {
+  --text:#54555e;
+  --text-bold:#171821;
+  --accent:#2D95E3;
+  --text-white:#ffffff;
+  --border:#888994;
+}
+
+
+//fonts
+%Ssp-400 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+}
+
+%Ssp-600 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+}
+
+%Ssp-700 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+}
+
+%montserrat-400 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+%montserrat-500 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+%montserrat-600 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+%montserrat-700 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+
+// fansybox error
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}
