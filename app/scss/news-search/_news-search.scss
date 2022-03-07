@@ -41,6 +41,7 @@
     width: 100%;
     display: flex;
     min-width: 0px;
+    background-color:#fff;
   }
 
   &__text {
@@ -53,15 +54,17 @@
     transform: translateY(-50%);
     right: 0;
     width: 40px;
-    height: 20px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    border: none;
-    background-color:transparent;
+    background-color:#fff;
+    padding: 11px 15px;
   }
 
   .arrow-left {
     right: 40px;
     border-right: 1px solid #E3E4E8;
   }
-  
 }

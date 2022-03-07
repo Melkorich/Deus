@@ -1,0 +1,98 @@
+.about {
+  padding-bottom: 48px;
+  border-bottom: 3px solid #888994;
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    border-top: 3px solid #888994;
+    margin-bottom: 48px;
+    padding-top: 32px;
+    max-width: 595px;
+    width: 100%;
+
+    &:nth-child(odd) {
+      margin-right: 30px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+  }
+
+  &__image-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 27px 23px;
+    max-width: 282px;
+    width: 100%;
+    min-height: 298px;
+    background-image:url(../images/about/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 30px;
+    color: var(--text-white);
+  }
+
+  .article__info--about {
+    color: var(--text-white);
+
+    span {
+      color: var(--text-white);
+    }
+  }
+
+  &__image-title {
+    margin-bottom: 28px;
+    @extend %montserrat-600;
+    font-size: 18px;
+    line-height: 1.44;
+    letter-spacing: -0.05em;
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--highlight);
+    }
+  }
+
+  &__link-item {
+    padding: 0 10px 22px 16px;
+    border-bottom: 1px solid #E3E4E8;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 16px;
+      background-image:url(../images/about/arrow-right.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      top: 5px;
+      left: 0;
+
+    }
+  }
+
+  &__link-title {
+    @extend %montserrat-600;
+    color: var(--text-bold);
+    font-size: 13px;
+    line-height: 1.4;
+    letter-spacing: -0.05em;
+    transition: color 0.2s;
+    flex: 1 1 auto;
+
+    &:hover {
+      color:var(--highlight);
+    }
+  }
+}

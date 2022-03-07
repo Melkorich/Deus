@@ -33,8 +33,7 @@ body {
  
 .main {
   flex-grow: 1;
-}
- 
+} 
 .container {
   max-width: 1240px;
   padding: 0 10px;
@@ -47,4 +46,22 @@ body {
   @extend %montserrat-700;
   line-height: 1.2;
   padding-right: 73px;
+}
+
+.title {
+  @extend %montserrat-700;
+  font-size: 21px;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-bold);
+  margin-bottom: 32px;
+}
+
+.star {
+  padding: 15px 0 0;
+
+  svg {
+    background-image:url(../images/icons/star.png);
+  }
 }

@@ -1,0 +1,59 @@
+.filter-form {
+
+  &__label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 336px;
+    width: 100%;
+    position: relative;
+
+    &:not(:last-child) {
+     margin-bottom: 20px;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      background-image:url(../images/about/arrow-right.png);
+      background-repeat:no-repeat;
+      background-size:contain;
+      width: 6px;
+      height: 16px;
+      top: 15px;
+      left: 2px;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  &__checkbox {
+    width: 336px;
+    border: none;
+    cursor: pointer;
+    padding: 7px 0 9px 18px;
+    transition: background-color 0.3s;
+  }
+
+  &__input:checked + .filter-form__checkbox {
+    background-color: rgba(#F44336, 0.2);
+  }
+
+  &__number {
+    padding: 7px 12px;
+    background-color:#F2F3F5;
+    position: absolute;
+    right: 1px;
+    width: 30px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

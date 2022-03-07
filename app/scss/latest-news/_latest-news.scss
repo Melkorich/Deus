@@ -18,12 +18,7 @@
   }
 
   &__title {
-    @extend %montserrat-700;
-    font-size: 21px;
-    line-height: 1.2;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--text-bold);
+    margin-bottom: 0;
   }
 
   &__link {
