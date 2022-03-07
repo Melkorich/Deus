@@ -37,12 +37,12 @@
     width: 336px;
     border: none;
     cursor: pointer;
-    padding: 7px 0 9px 18px;
-    transition: background-color 0.3s;
+    padding: 7px 0 8px 18px;
+    border-bottom: 1px solid transparent;
   }
 
   &__input:checked + .filter-form__checkbox {
-    background-color: rgba(#F44336, 0.2);
+    border-bottom: 1px solid #F44336;
   }
 
   &__number {
