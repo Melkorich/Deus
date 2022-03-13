@@ -3,6 +3,8 @@
 
   &__inner {
     padding: 70px 0 64px;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   &__logo {
@@ -14,11 +16,33 @@
     color: #83858F;
     margin-bottom: 33px;
     display: block;
+    font-size: 15px;
+    line-height: 1.26;
+    text-transform: lowercase;
   }
 
   &__col {
     display: flex;
     flex-direction: column;
+
+    &:nth-child(1) {
+      width: 235px;
+      margin-right: 70px;
+    }
+
+    &:nth-child(2) {
+      width: 180px;
+      margin-right: 26px;
+    }
+
+    &:nth-child(3) {
+      width: 318px;
+      margin-right: 100px;
+    }
+
+    &:nth-child(4) {
+      width: 280px;
+    }
   }
 
   &__socials {
@@ -30,7 +54,7 @@
     &:not(:last-child) {
       margin-right: 7px;
     }
-  }
+  } 
 
   &__socials-link {
     width: 46px;
@@ -57,4 +81,63 @@
   &__socials-link--4 {
     background-color:#C13282;
   }
+
+  &__subtitle {
+    display: block;
+    text-transform: uppercase;
+    color: var(--text-white);
+    margin-bottom: 24px;
+    @extend %montserrat-500;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+  }
+
+  &__link {
+    display: block;
+    color: var(--text-white);
+    font-size: 16px;
+    line-height: 1.6;
+    text-transform: capitalize;
+    transition: color 0.2s;
+    outline: none;
+
+    &:focus,
+    &:hover,
+    &:active {
+      color:var(--highlight);
+    }
+  }
+
+  .popular__content--footer {
+    width: 100%;
+  } 
+
+  .popular__link--footer {
+    color: var(--text-white);
+    line-height: 1.4;
+  }
+
+  .popular__image--footer {
+    min-width: 88px;
+  }
+
+  .newsletter__form--footer {
+    padding-top: 26px;
+
+    input {
+      padding: 14px 10px;
+    }
+
+    button {
+      padding: 17px 15px 15px;
+      margin: 0 0 0 -35px;
+    }
+  }
+  
+  .newsletter__label--footer {
+    line-height: 1.25;
+    text-transform: capitalize;
+  }
+
 }

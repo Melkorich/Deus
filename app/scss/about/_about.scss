@@ -2,6 +2,10 @@
   padding-bottom: 48px;
   border-bottom: 3px solid #888994;
 
+  @include maxw($xs) {
+    padding-bottom: 20px;
+  }
+
   &__items {
     display: flex;
     flex-wrap: wrap;
@@ -14,13 +18,45 @@
     max-width: 595px;
     width: 100%;
 
+    @include maxw($md) {
+      max-width: 100%;
+      padding-top: 15px;
+      margin-bottom: 25px;
+    }
+
     &:nth-child(odd) {
       margin-right: 30px;
+      
+      @include maxw($lg) {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-child(2) {
+      .about__image-link {
+        background-image:url('../images/about/2.jpg');
+      }
+    }
+
+    &:nth-child(3) {
+      .about__image-link {
+        background-image:url('../images/about/3.jpg');
+      }
+    }
+
+    &:nth-child(4) {
+      .about__image-link {
+        background-image:url('../images/about/4.jpg');
+      }
     }
   }
 
   &__inner {
     display: flex;
+
+    @include maxw($sm) {
+      flex-direction: column;
+    }
   }
 
   &__image-link {
@@ -30,12 +66,29 @@
     padding: 27px 23px;
     max-width: 282px;
     width: 100%;
-    min-height: 298px;
-    background-image:url(../images/about/1.jpg);
+    background-image:url('../images/about/1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     margin-right: 30px;
     color: var(--text-white);
+
+    @include maxw($sm) {
+      max-width: 100%;
+      min-height: 200px;
+      height: auto;
+      padding: 15px;
+      margin-bottom: 20px;
+      margin-right: 0;
+    }
+  }
+
+  &__links-items {
+    min-width: 280px;
+
+    @include maxw($sm) {
+      width: 100%;
+      min-width: 100%;
+    }
   }
 
   .article__info--about {
@@ -83,16 +136,20 @@
   }
 
   &__link-title {
+    flex: 1 1 auto;
+
+    &:hover .about__link{
+      color:var(--highlight);
+    }
+  }
+
+  &__link {
+    display: inline-block;
     @extend %montserrat-600;
     color: var(--text-bold);
     font-size: 13px;
     line-height: 1.4;
     letter-spacing: -0.05em;
     transition: color 0.2s;
-    flex: 1 1 auto;
-
-    &:hover {
-      color:var(--highlight);
-    }
   }
 }

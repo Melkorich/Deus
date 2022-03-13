@@ -5,6 +5,14 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 8px;
+
+    @include maxw($lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include maxw($xs) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &__item {
@@ -20,6 +28,11 @@
     grid-row: 1/4;
     // grid-row-start: 1;
     // grid-row-end: 4;
+
+    @include maxw($lg) {
+      grid-column: 1/3;
+      grid-row: 1/1;
+    }
   }
 }
 
@@ -30,13 +43,47 @@
   border-radius: 5px;
   overflow: hidden;
 
+  @include maxw($xs) {
+    flex-direction: column-reverse;
+  }
+
   &:nth-child(2) {
     flex-direction:row-reverse;
+
+    @include maxw($xs) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &:last-child {
+    .article__title-link {
+      font-size: 32px;
+
+      @include maxw($md) {
+        font-size: 26px;
+      }
+
+      @include maxw($sm) {
+        font-size: 22px;
+      }
+
+      @include maxw($xs) {
+        font-size: 16px;
+      }
+    }
   }
 
   &__content {
     width: 50%;
     padding: 32px;
+
+    @include maxw($sm) {
+      padding: 15px;
+    }
+
+    @include maxw($xs) {
+      width: 100%;
+    }
   } 
 
   &__image {
@@ -44,6 +91,12 @@
     width: 50%;
     height: 100%;
     overflow: hidden;
+
+    @include maxw($xs) {
+      width: 100%;
+      height: auto;
+      max-height: 200px;
+    }
 
     &:hover .article__img {
       transform: scale(1.1);
@@ -58,15 +111,24 @@
   }
 
   &__title {
-    @extend %montserrat-600;
-    color:var(--text-bold);
-    line-height: 1.4;
     margin: 0 auto 16px;
-    transition: color 0.2s;
 
-    &:hover {
+    &:hover .article__title-link{
       color: var(--highlight);
     }
+  }
+
+  &__title-link {
+    @extend %montserrat-600;
+    font-size: 16px;
+    line-height: 1.4;
+    color:var(--text-bold);
+    display: inline-block;
+    transition: color 0.2s;
+
+    // @include maxw($xs) {
+    //   font-size: 14px;
+    // }
   }
 
   &__info {
@@ -92,12 +154,28 @@
     .article__image {
       width: 100%;
       height: 362px;
+
+      @include maxw($md) {
+        height: 300px;
+      }
+
+      @include maxw($sm) {
+        height: auto;
+      }
     }
 
     .article__title {
       font-size: 32px;
       line-height: 1.2;
       letter-spacing: -0.05em;
+
+      @include maxw($sm) {
+        font-size: 24px;
+      }
+
+      @include maxw($xs) {
+        font-size: 20px;
+      }
     }
   }
 }

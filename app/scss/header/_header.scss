@@ -3,6 +3,11 @@
   &__top {
     background-color:var(--text-bold);
     padding: 7px 0;
+
+    @include maxw($lg) {
+      position: relative;
+      z-index: 99;
+    }
   }
 
   &__main {
@@ -21,11 +26,21 @@
   &__list {
     display: flex;
     align-items: center;
+
+    @include maxw($xs) {
+      flex-wrap: wrap;
+      margin-right: 10px;
+    }
+
   }
 
   &__item {
     &:not(:last-child) {
       margin-right: 23px;
+    }
+
+    @include maxw($xs) {
+      padding: 5px 0;
     }
   }
 
@@ -90,6 +105,9 @@
 .menu {
   display: flex;
   align-items: center; 
+
+  @include maxw($lg) {
+  }
   
   &__burger {
     margin: 0;
@@ -101,13 +119,26 @@
     border: none;
     background-color: transparent;
     position: relative;
+    z-index: 99;
+
+    @include maxw($lg) {
+      &.active {
+        span {
+          background-color:var(--text-white);
+        }
+  
+        &::before,
+        &::after {
+          background-color:var(--text-white);
+        }
+      }
+    }
 
     &:hover {
       span,
       &::before,
       &::after {
         background-color:var(--accent);
-    
       }
     }
   
@@ -146,10 +177,37 @@
   &__list {
     display: flex;
     align-items: center;
+
+    @include maxw($lg) {
+      display: block;
+      position: absolute;
+      min-height: 100vh;
+      margin: 0 auto;
+      background-color: rgba(#171821, 0.7);
+      backdrop-filter: blur(5px);
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      padding: 100px 5px;
+      z-index: 98;
+      transform: translateY(-100%);
+    }
+
+    &.active {
+      transform: translateY(0%);
+    }
   }
 
-  &__item:not(:last-child) {
-    margin-right: 24px;
+
+  &__item {
+    @include maxw($lg) {
+      padding: 15px 0;
+    }
+
+    &:not(:last-child) {
+      margin-right: 24px;
+    }
   }
 
   &__link {
@@ -160,6 +218,10 @@
     line-height: 1.2;
     @extend %Ssp-700;
     transition: color 0.2s ease-in-out;
+
+    @include maxw($lg) {
+      color: var(--text-white);
+    }
 
     &:hover {
       color: var(--accent);
@@ -175,6 +237,11 @@
       padding: 3px;
       transform: rotate(45deg);
       transition: border 0.2s ease-in-out;
+
+      @include maxw($lg) {
+        border-color: var(--text-white);
+        transform: rotate(320deg);
+      }
     }
 
     &.menu__link--sub:hover::after {
@@ -189,6 +256,13 @@
     margin-left: auto;
     height: 30px;
     padding: 2px 10px;
+
+    @include maxw($xs) {
+      display: block;
+      position: absolute;
+      top: 120px;
+      left: 0;
+    }
   } 
  
   .search-txt {
@@ -209,6 +283,10 @@
     opacity:0;
     visibility: hidden;
     transition: 0.5s ease-in-out;
+
+    @include maxw($xs) {
+      left: 34px;
+    }
 
     &::placeholder {
       font-size: 16px;

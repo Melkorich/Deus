@@ -59,17 +59,21 @@
   }
 
   &__heading {
+    margin-bottom: 17px;
+    flex: 1 1 auto;
+
+    &:hover .video__heading-link{
+      color: var(--highlight);
+    } 
+  }
+
+  &__heading-link {
+    display: inline-block;
     @extend %montserrat-600;
     font-size: 21px;
     line-height: 1.4;
     letter-spacing: -0.05em;
     color: var(--text-bold);
     transition: color 0.2s;
-    margin-bottom: 17px;
-    flex: 1 1 auto;
-
-    &:hover {
-      color: var(--highlight);
-    } 
   }
 }

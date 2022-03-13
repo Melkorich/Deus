@@ -23,6 +23,10 @@ body {
   line-height: 1.5;
   color: var(--text);
   background-color: #F7F7F7;
+
+  &.scroll-block {
+    overflow: hidden;
+  }
 } 
 
 .wrapper {
@@ -39,7 +43,7 @@ body {
   padding: 0 10px;
   margin: 0 auto;
 }
-
+ 
 .logo {
   color: var(--text-bold);
   font-size: 28px;
@@ -56,6 +60,11 @@ body {
   text-transform: uppercase;
   color: var(--text-bold);
   margin-bottom: 32px;
+
+  @include maxw($xs) {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
 }
 
 .star {

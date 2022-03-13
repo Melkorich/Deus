@@ -60,7 +60,7 @@
         <div class="container">
           <div class="header__main-inner">
             <nav class="menu">
-              <button class="menu__burger">
+              <button class="menu__burger" type="button">
                 <span></span>
               </button>
               <a class="logo" href="#">
@@ -212,19 +212,39 @@
                 <h2 class="latest-news__title title">
                   latest News
                 </h2>
-                <div class="latest-news__list">
-                  <a class="latest-news__link" href="#">All</a>
-                  <a class="latest-news__link" href="#">World</a>
-                  <a class="latest-news__link" href="#">Lifestyle</a>
-                  <a class="latest-news__link" href="#">Business</a>
-                  <a class="latest-news__link" href="#">Fashion</a>
-                </div>
-              </div>
+                <ul class="latest-news__tabs-nav">
+                  <li class="latest-news__tab">
+                    <button class="latest-news__tab-btn latest-news__tab-btn--active" type="button" data-path="all">
+                      All
+                    </button>
+                  </li>
+                  <li class="latest-news__tab">
+                    <button class="latest-news__tab-btn" type="button" data-path="world">
+                      World
+                    </button>
+                  </li>
+                  <li class="latest-news__tab">
+                    <button class="latest-news__tab-btn" type="button" data-path="life">
+                      Lifestyle
+                    </button>
+                  </li>
+                  <li class="latest-news__tab">
+                    <button class="latest-news__tab-btn" type="button" data-path="business">
+                      Business
+                    </button>
+                  </li>
+                  <li class="latest-news__tab">
+                    <button class="latest-news__tab-btn" type="button" data-path="fashion">
+                      Fashion
+                    </button>
+                  </li>
+                </ul>
+              </div> 
 
               <div class="latest-news__content">
 
                 <div class="latest-news__item">
-                  <article class="latest-news__article news-article">
+                  <article class="latest-news__article news-article" data-target="world">
                     <a class="news-article__image" href="#">
                       <img class="news-article__img" src="images/latest-news/1.jpg" alt="world">
                     </a>
@@ -251,7 +271,7 @@
                   </article>
                 </div>
                 <div class="latest-news__item">
-                  <article class="latest-news__article news-article">
+                  <article class="latest-news__article news-article" data-target="fashion">
                     <a class="news-article__image" href="#">
                       <img class="news-article__img" src="images/latest-news/2.jpg" alt="world">
                     </a>
@@ -278,7 +298,7 @@
                   </article>
                 </div>
                 <div class="latest-news__item">
-                  <article class="latest-news__article news-article">
+                  <article class="latest-news__article news-article" data-target="life">
                     <a class="news-article__image" href="#">
                       <img class="news-article__img" src="images/latest-news/3.jpg" alt="world">
                     </a>
@@ -305,7 +325,7 @@
                   </article>
                 </div>
                 <div class="latest-news__item">
-                  <article class="latest-news__article news-article">
+                  <article class="latest-news__article news-article" data-target="business">
                     <a class="news-article__image" href="#">
                       <img class="news-article__img" src="images/latest-news/4.jpg" alt="world">
                     </a>
@@ -427,12 +447,14 @@
                   <label class="newsletter__label" for="">
                     Subscribe for our daily news
                     <input class="newsletter__input" type="email" name="email" placeholder="Your email">
-                    <button class="newsletter__btn" type="submit">sign up</button>
+                    <button class="newsletter__btn" type="submit">
+                      sign up
+                    </button>
                   </label>
                 </form>
               </div>
 
-              <div class="news-aside__item aside-social">
+              <div class="news-aside__item aside-social aside-social--adaptive">
                 <h3 class="news-aside__title aside-social__title">
                   Let's hang out on social
                 </h3>
@@ -576,28 +598,28 @@
                 <ul class="about__links-items">
                   <li class="about__link-item">
                     <h4 class="about__link-title">
-                      <a href="#">
+                      <a class="about__link" href="#">
                         Cryptocurrency Markets: Weekly Trading Overview (06-13 October)
                       </a>
                     </h4>
                   </li>
                   <li class="about__link-item">
                     <h4 class="about__link-title">
-                      <a href="#">
+                      <a class="about__link" href="#">
                         MyEtherWallet Opens the Ethereum Universe for You
                       </a>
                     </h4>
                   </li>
                   <li class="about__link-item">
                     <h4 class="about__link-title">
-                      <a href="#">
+                      <a class="about__link" href="#">
                         Put Your Money Where Your Marketing Is
                       </a>
                     </h4>
                   </li>
                   <li class="about__link-item">
                     <h4 class="about__link-title">
-                      <a href="#">
+                      <a class="about__link" href="#">
                         3 ways for startups to master the art of emailing
                       </a>
                     </h4>
@@ -626,28 +648,28 @@
                 <ul class="about__links-items">
                   <li class="about__link-item">
                     <h4 class="about__link-title">
-                      <a href="#">
+                      <a class="about__link" href="#">
                         5 deadliest luxury vacation spots on Earth
                       </a>
                     </h4>
                   </li>
                   <li class="about__link-item">
                     <h4 class="about__link-title">
-                      <a href="#">
+                      <a class="about__link" href="#">
                         These 4 startups can send you to work and travel abroad
                       </a>
                     </h4>
                   </li>
                   <li class="about__link-item">
                     <h4 class="about__link-title">
-                      <a href="#">
+                      <a class="about__link" href="#">
                         9 mind-blowing travel destinations for adventure seekers
                       </a>
                     </h4>
                   </li>
                   <li class="about__link-item">
                     <h4 class="about__link-title">
-                      <a href="#">
+                      <a class="about__link" href="#">
                         These Small Business Ideas Are Great for Entrepreneurial Children
                       </a>
                     </h4>
@@ -676,28 +698,28 @@
                 <ul class="about__links-items">
                   <li class="about__link-item">
                     <h4 class="about__link-title">
-                      <a href="#">
+                      <a class="about__link" href="#">
                         Cryptocurrency Markets: Weekly Trading Overview (06-13 October)
                       </a>
                     </h4>
                   </li>
                   <li class="about__link-item">
                     <h4 class="about__link-title">
-                      <a href="#">
+                      <a class="about__link" href="#">
                         MyEtherWallet Opens the Ethereum Universe for You
                       </a>
                     </h4>
                   </li>
                   <li class="about__link-item">
                     <h4 class="about__link-title">
-                      <a href="#">
+                      <a class="about__link" href="#">
                         Put Your Money Where Your Marketing Is
                       </a>
                     </h4>
                   </li>
                   <li class="about__link-item">
                     <h4 class="about__link-title">
-                      <a href="#">
+                      <a class="about__link" href="#">
                         3 ways for startups to master the art of emailing
                       </a>
                     </h4>
@@ -726,28 +748,28 @@
                 <ul class="about__links-items">
                   <li class="about__link-item">
                     <h4 class="about__link-title">
-                      <a href="#">
+                      <a class="about__link" href="#">
                         Financial Adviser: 4 ways to know how much dividends you should pay
                       </a>
                     </h4>
                   </li>
                   <li class="about__link-item">
                     <h4 class="about__link-title">
-                      <a href="#">
+                      <a class="about__link" href="#">
                         3 cash flow rules first-time business owners need to know
                       </a>
                     </h4>
                   </li>
                   <li class="about__link-item">
                     <h4 class="about__link-title">
-                      <a href="#">
+                      <a class="about__link" href="#">
                         Common credit mistakes new business owners make
                       </a>
                     </h4>
                   </li>
                   <li class="about__link-item">
                     <h4 class="about__link-title">
-                      <a href="#">
+                      <a class="about__link" href="#">
                         Ask these 2 questions every time you make a purchase
                       </a>
                     </h4>
@@ -774,7 +796,7 @@
                   </span>
                 </a>
                 <h3 class="video__heading">
-                  <a href="#">
+                  <a class="video__heading-link" href="#">
                     What Days and Hours are PH Online Shoppers Most Likely to Buy?
                   </a>
                 </h3>
@@ -801,7 +823,7 @@
                   <img class="video__image" src="images/videos/2.jpg" alt="video image">
                 </a>
                 <h3 class="video__heading">
-                  <a href="#">
+                  <a class="video__heading-link" href="#">
                     What Days and Hours are PH Online Shoppers Most Likely to Buy?
                   </a>
                 </h3>
@@ -824,7 +846,7 @@
           </div>
         </div>
       </section>
-
+<!-- 
       <section class="worldwide">
         <div class="container">
           <div class="worldwide__inner">
@@ -841,7 +863,9 @@
                     </div>
                     <div class="worldwide-article__content">
                       <h3 class="worldwide-article__title">
-                        How Crown Asia Chemicals grew from startup to listed company
+                        <a class="worldwide-article__link" href="#">
+                          How Crown Asia Chemicals grew from startup to listed company
+                        </a>
                       </h3>
                       <div class="article__info">
                         <div class="article__author">
@@ -865,7 +889,9 @@
                     </div>
                     <div class="worldwide-article__content">
                       <h3 class="worldwide-article__title">
-                        How Crown Asia Chemicals grew from startup to listed company
+                        <a class="worldwide-article__link" href="#">
+                          How Crown Asia Chemicals grew from startup to listed company
+                        </a>
                       </h3>
                       <div class="article__info">
                         <div class="article__author">
@@ -889,7 +915,9 @@
                     </div>
                     <div class="worldwide-article__content">
                       <h3 class="worldwide-article__title">
-                        How Crown Asia Chemicals grew from startup to listed company
+                        <a class="worldwide-article__link" href="#">
+                          How Crown Asia Chemicals grew from startup to listed company
+                        </a>
                       </h3>
                       <div class="article__info">
                         <div class="article__author">
@@ -913,7 +941,9 @@
                     </div>
                     <div class="worldwide-article__content">
                       <h3 class="worldwide-article__title">
-                        How Crown Asia Chemicals grew from startup to listed company
+                        <a class="worldwide-article__link" href="#">
+                          How Crown Asia Chemicals grew from startup to listed company
+                        </a>
                       </h3>
                       <div class="article__info">
                         <div class="article__author">
@@ -937,7 +967,9 @@
                     </div>
                     <div class="worldwide-article__content">
                       <h3 class="worldwide-article__title">
-                        How Crown Asia Chemicals grew from startup to listed company
+                        <a class="worldwide-article__link" href="#">
+                          How Crown Asia Chemicals grew from startup to listed company
+                        </a>
                       </h3>
                       <div class="article__info">
                         <div class="article__author">
@@ -961,7 +993,9 @@
                     </div>
                     <div class="worldwide-article__content">
                       <h3 class="worldwide-article__title">
-                        How Crown Asia Chemicals grew from startup to listed company
+                        <a class="worldwide-article__link" href="#">
+                          How Crown Asia Chemicals grew from startup to listed company
+                        </a>
                       </h3>
                       <div class="article__info">
                         <div class="article__author">
@@ -1112,8 +1146,8 @@
     </main>
 
     <footer class="footer">
-      <div class="footer__inner">
-        <div class="container">
+      <div class="container">
+        <div class="footer__inner">
           <div class="footer__col">
             <a class="logo footer__logo" href="#">
               Deus
@@ -1146,10 +1180,93 @@
               </li>
             </ul>
           </div>
+          <div class="footer__col">
+            <span class="footer__subtitle">
+              useful links
+            </span>
+            <a class="footer__link" href="">
+              About
+            </a>
+            <a class="footer__link" href="">
+              News
+            </a>
+            <a class="footer__link" href="">
+              Advertise
+            </a>
+            <a class="footer__link" href="">
+              Support
+            </a>
+            <a class="footer__link" href="">
+              Features
+            </a>
+            <a class="footer__link" href="">
+              Contact
+            </a>
+          </div>
+          <div class="footer__col">
+            <span class="footer__subtitle">
+              popular posts
+            </span>
+            <ul class="popular__items">
+
+              <li class="popular__item">
+                <div class="popular__image popular__image--footer">
+                  <img class="popular__img" src="images/latest-news/1.jpg" alt="">
+                </div>
+                <div class="popular__content popular__content--footer">
+                  <h4 class="popular__subtitle popular__subtitle--footer">
+                    <a class="popular__link popular__link--footer" href="#">
+                      Lose These 12 Bad Habits If You're Serious About Becoming a Millionaire
+                    </a>
+                  </h4>
+                  <div class="article__info">
+                    <div class="article__author">
+                      by <span>Deothemes</span> 
+                    </div>
+                    <time datatime="2018-01-21"> - Jan. 21, 2018</time>
+                  </div>
+                </div>
+              </li>
+
+              <li class="popular__item">
+                <div class="popular__image popular__image--footer">
+                  <img class="popular__img" src="images/latest-news/3.jpg" alt="">
+                </div>
+                <div class="popular__content popular__content--footer">
+                  <h4 class="popular__subtitle popular__subtitle--footer">
+                    <a class="popular__link popular__link--footer" href="#">
+                      Lose These 12 Bad Habits If You're Serious About Becoming a Millionaire
+                    </a>
+                  </h4>
+                  <div class="article__info">
+                    <div class="article__author">
+                      by <span>Deothemes</span> 
+                    </div>
+                    <time datatime="2018-01-21"> - Jan. 21, 2018</time>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <span class="footer__subtitle">
+              newsletter
+            <span>
+            <form class="newsletter__form newsletter__form--footer" action="#">
+              <label class="newsletter__label newsletter__label--footer" for="">
+                Subscribe for our daily news
+                <input class="newsletter__input" type="email" name="email" placeholder="Your email">
+                <button class="newsletter__btn" type="submit">
+                  sign up
+                </button>
+              </label>
+            </form>
+          </div>
 
         </div>
       </div>
-    </footer>
+    </footer> -->
 
   </div>
 
