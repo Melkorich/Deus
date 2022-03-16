@@ -4,12 +4,12 @@
 
   @include maxw($xs) {
     padding-bottom: 20px;
-  }
+  } 
 
   &__items {
     display: flex;
     flex-wrap: wrap;
-  }
+  } 
 
   &__item {
     border-top: 3px solid #888994;

@@ -5,11 +5,25 @@
     padding: 70px 0 64px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include maxw($lg) {
+      justify-content: start;
+    }
+
+    @include maxw($sm) {
+      padding: 30px 0;
+    }
   }
 
   &__logo {
     color: var(--text-white);
     margin-bottom: 24px;
+    display: block;
+
+    @include maxw($sm) {
+      margin-bottom: 15px;
+    }
   }
 
   &__text {
@@ -25,23 +39,58 @@
     display: flex;
     flex-direction: column;
 
+    @include maxw($lg) {
+
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+     
+    }
+
+    @include maxw($sm) {
+      display: block;
+    }
+
+
     &:nth-child(1) {
-      width: 235px;
+      max-width: 235px;
+      width: 100%;
       margin-right: 70px;
+
+      @include maxw($sm) {
+        margin-right: 0;
+        max-width: 100%;
+      }
     }
 
     &:nth-child(2) {
-      width: 180px;
+      max-width: 180px;
+      width: 100%;
       margin-right: 26px;
+
+      @include maxw($sm) {
+        margin-right: 0;
+        max-width: 100%;
+      }
     }
 
     &:nth-child(3) {
-      width: 318px;
+      max-width: 318px;
+      width: 100%;
       margin-right: 100px;
+
+      @include maxw($sm) {
+        margin-right: 0;
+        max-width: 100%;
+      }
     }
 
     &:nth-child(4) {
       width: 280px;
+
+      @include maxw($xs) {
+        width: 100%;
+      }
     }
   }
 
@@ -91,6 +140,10 @@
     font-size: 14px;
     line-height: 1.2;
     letter-spacing: 0.05em;
+
+    @include maxw($sm) {
+      margin-bottom: 10px;
+    }
   }
 
   &__link {
@@ -109,35 +162,134 @@
     }
   }
 
-  .popular__content--footer {
-    width: 100%;
-  } 
+  &__popular-items {
+    display: flex;
+    flex-direction: column;
+  }
 
-  .popular__link--footer {
+  &__popular-item {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 22px;
+    }
+  }
+
+  &__popular-image {
+    min-width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    margin-right: 16px;
+
+    @include maxw($xs) {
+      width: 60px;
+      height: 60px;
+      min-width: 60px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  &__popular-content {
+    width: 100%;
+  }
+
+  &__popular-subtitle {
+    margin-bottom: 12px;
+
+    &:hover .footer__popular-link{
+      color: var(--highlight);
+    }
+  }
+
+  &__popular-link {
     color: var(--text-white);
     line-height: 1.4;
+    @extend %montserrat-600;
+    font-size: 14px;
+    letter-spacing: -0.05em;
+    transition: color 0.2s;
+    display: inline-block;
   }
 
-  .popular__image--footer {
-    min-width: 88px;
-  }
-
-  .newsletter__form--footer {
+  &__newsletter-form {
     padding-top: 26px;
-
-    input {
-      padding: 14px 10px;
-    }
-
-    button {
-      padding: 17px 15px 15px;
-      margin: 0 0 0 -35px;
-    }
+    width: 100%;
   }
-  
-  .newsletter__label--footer {
+
+  &__newsletter-label {
     line-height: 1.25;
     text-transform: capitalize;
+    position: relative;
+    padding-left: 26px;
+    color: #83858F;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-image: url(../images/icons/letter.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      top: 4px;
+      left: 0;
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &__newsletter-input {
+    padding: 14px 10px 13px;
+    margin-top: 20px;
+    max-width: 224px;
+    width: 100%;
+    border: 1px solid #E3E4E8;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    line-height: 1.25;
+    @extend %Ssp-400;
+    color: #54555E;
+    outline: none;
+
+    @include maxw($xs) {
+      display: block;
+      max-width: 100%;
+      border-radius: 5px;
+    }
+
+    &::placeholder {
+      font-size: 16px;
+      line-height: 1.25;
+      @extend %Ssp-400;
+      color: #54555E;
+    }
+  }
+
+  &__newsletter-btn {
+    padding: 17px 15px 14px;
+    margin: 0 0 0 -35px;
+    min-height: 46px;
+    min-width: 81px;
+    text-transform: uppercase;
+    background-color: var(--accent);
+    color: var(--text-white);
+    font-size: 14px;
+    line-height: 1.3;
+    @extend %Ssp-700;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    outline: none;
+
+    @include maxw($xs) {
+      display: block;
+      width: 100%;
+      border-radius: 5px;
+      margin: 0 0 0 0px;
+    }
   }
 
 }

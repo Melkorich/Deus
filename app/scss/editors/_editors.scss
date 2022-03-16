@@ -15,7 +15,7 @@
     padding: 0 15px;
 
     @include maxw($xs) {
-      padding: 0;
+      padding: 0 5px;
     }
   } 
 
@@ -37,6 +37,15 @@
 
     @include maxw($xl) {
       padding: 15px;
+    }
+
+    @include maxw($sm) {
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    @include maxw($xs) {
+     padding: 6px;
     }
   }
 
