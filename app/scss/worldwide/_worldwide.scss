@@ -50,13 +50,14 @@
 
   @include maxw($sm) {
     flex-direction: column;
-  }
+  } 
 
   &__image {
     max-width: 401px;
     width: 100%;
     height: auto;
     margin-right: 30px;
+    position: relative;
 
     @include maxw($sm) {
       display: block;

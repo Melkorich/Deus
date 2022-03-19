@@ -65,7 +65,7 @@ body {
     font-size: 18px;
     margin-bottom: 25px;
   }
-}
+} 
 
 .star {
   padding: 15px 0 0;
@@ -73,4 +73,34 @@ body {
   svg {
     background-image:url(../images/icons/star.png);
   }
+}
+
+.news-tag {
+  padding: 5px 11px;
+  border-radius: 5px;
+  font-size: 10px;
+  line-height: 1.2;
+  color: var(--text-white);
+  text-transform: uppercase;
+  @extend %montserrat-700;
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+
+}
+
+.news-tag--world {
+  background-color: #3E3EDD;
+}
+
+.news-tag--fashion {
+  background-color:#7B1FA2;
+}
+
+.news-tag--business{
+  background-color:#0E79C9;
+}
+
+.news-tag--lifestyle{
+  background-color:#19C22A;
 }
