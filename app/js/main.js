@@ -48,6 +48,8 @@ const menuList = document.querySelector('.menu__list');
 const menuLink = document.querySelectorAll('.menu__link');
 const menuSubLink = document.querySelectorAll('.menu__link--sub');
 
+const menuSubSubLink = document.querySelectorAll('.menu-sub__link');
+
 menuBtn.addEventListener('click', function() {
   menuList.classList.toggle('active');
   menuBtn.classList.toggle('active');
@@ -56,6 +58,14 @@ menuBtn.addEventListener('click', function() {
 
 for (let i = 0; i < menuLink.length; i++) {
   menuLink[i].addEventListener('click', function () {
+    menuList.classList.remove('active');
+    menuBtn.classList.remove('active');
+    document.querySelector('body').classList.remove('scroll-block');
+  });
+}
+
+for (let i = 0; i < menuSubSubLink.length; i ++) {
+  menuSubSubLink[i].addEventListener('click', function() {
     menuList.classList.remove('active');
     menuBtn.classList.remove('active');
     document.querySelector('body').classList.remove('scroll-block');
@@ -104,6 +114,46 @@ newsTabsNav.addEventListener('click', (e) => {
     }
   }
 });
+
+
+//dropdown
+
+const dropdownBtn = document.querySelector('.menu__item--dropdown');
+const menuSubList = document.querySelector('.menu-sub__list');
+
+dropdownBtn.addEventListener('click', function() {
+  menuSubList.classList.toggle('menu-sub__list--active');
+});
+
+//modal
+
+const modal = document.querySelector('.modal');
+const modalOpen = document.querySelector('.modal__open');
+const modalClose = document.querySelector('.modal__close');
+const modalOverlay = document.querySelector('.modal__overlay');
+
+const openModal = function() {
+  modal.classList.remove('hidden');
+  modalOverlay.classList.remove('hidden');
+}
+
+const closeModal = function() {
+  modal.classList.add('hidden');
+  modalOverlay.classList.add('hidden');
+}
+
+modalOpen.addEventListener('click', openModal);
+modalClose.addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', function(e) {
+  if( e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+})
+
+
+
 
 
 

@@ -67,8 +67,21 @@
                 Deus
               </a>
               <ul class="menu__list">
-                <li class="menu__item">
-                  <a class="menu__link menu__link--sub" href="#">Home</a>
+                <li class="menu__item menu__item--dropdown">
+                  <button class="menu__link--sub menu__link-btn" type="btn">
+                    Home
+                  </button>
+                    <ul class="menu-sub__list">
+                      <li class="menu-sub__item">
+                        <a class="menu-sub__link" href="#">Main Article</a>
+                      </li>
+                      <li class="menu-sub__item">
+                        <a class="menu-sub__link" href="#">Politics</a>
+                      </li>
+                      <li class="menu-sub__item">
+                        <a class="menu-sub__link" href="#">Sport</a>
+                      </li>
+                    </ul>
                 </li>
                 <li class="menu__item">
                   <a class="menu__link menu__link--sub" href="#">Posts</a>
@@ -77,7 +90,7 @@
                   <a class="menu__link menu__link--sub" href="#">Pages</a>
                 </li>
                 <li class="menu__item">
-                  <a class="menu__link menu__link--sub" href="#">Features</a>
+                  <a class="menu__link" href="#">Features</a>
                 </li>
                 <li class="menu__item">
                   <a class="menu__link" href="#">Purchase</a>
@@ -91,6 +104,26 @@
                   </svg>
                 </button>
               </form>
+              <button class="menu__search menu__search--mobile modal__open" type="button">
+                <svg class="search-icon">
+                  <use xlink:href=images/sprite.svg#search></use>
+                </svg>
+              </button>
+
+              <div class="modal hidden">
+                <div class="modal__body">
+                  <div class="modal__top">
+                    <h3 class="modal__title">Search for news</h3>
+                    <button class="modal__close">&times</button>
+                  </div>
+                  <form class="modal__form" action="#">
+                    <input class="modal__input" type="text" placeholder="text">
+                    <button class="modal__search">Find</button>
+                  </form>
+                </div>
+              </div>
+              <div class="modal__overlay hidden"></div>
+              
             </nav>
           </div>
         </div>
@@ -116,7 +149,7 @@
               <div class="news-search__item">
                 <div class="news-search__text">
                   <p>
-                    Fashion month always has one dangerous. 
+                    Month always has one dangerous. 
                   </p>
                 </div>
               </div>

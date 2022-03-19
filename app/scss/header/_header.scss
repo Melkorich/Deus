@@ -105,9 +105,6 @@
 .menu {
   display: flex;
   align-items: center; 
-
-  @include maxw($lg) {
-  }
   
   &__burger {
     margin: 0;
@@ -194,6 +191,10 @@
       transform: translateY(-100%);
     }
 
+    @include maxw($xs) {
+      top: 15px;
+    }
+
     &.active {
       transform: translateY(0%);
     }
@@ -216,6 +217,7 @@
     color: var(--text-bold);
     text-transform: uppercase;
     line-height: 1.2;
+    z-index: 98;
     @extend %Ssp-700;
     transition: color 0.2s ease-in-out;
 
@@ -250,6 +252,94 @@
     }
   }
 
+  &__link-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0 16px 0 0;
+    color: var(--text-bold);
+    text-transform: uppercase;
+    line-height: 1.2;
+    z-index: 98;
+    @extend %Ssp-700;
+    position: relative;
+    transition: color 0.2s;
+
+    @include maxw($lg) {
+      color: var(--text-white);
+    }
+
+    &:hover {
+      color: var(--accent);
+    }
+
+    &.menu__link--sub:hover::after {
+      border: solid var(--accent);
+      border-width: 0 1px 1px 0;
+    }
+
+    &.menu__link--sub::after {
+      position: absolute;
+      content: '';
+      top: 5px;
+      right: 0;
+      border: solid var(--text-bold);
+      border-width: 0 1px 1px 0;
+      padding: 3px;
+      transform: rotate(45deg);
+      transition: border 0.2s;
+
+      @include maxw($lg) {
+        border-color: var(--text-white);
+        transform: rotate(320deg);
+      }
+    }
+  }
+
+  //dropdown
+
+  &__item--dropdown {
+    position: relative;
+  }
+
+  .menu-sub__list {
+    position: absolute;
+    display: none;
+  }
+
+  .menu-sub__list--active {
+    display: block;
+    top: 15px;
+    left: 0;
+    z-index: 96;
+    min-width: 100px;
+    max-width: 100%;
+    padding-top: 10px;
+    background-color: #F7F7F7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+
+    @include maxw($lg) {
+      position: static;
+      background-color:rgba(#F7F7F7, 0.6);
+      border: 0px 5px 5px 0px;
+    }
+  }
+
+  .menu-sub__item {
+    padding: 8px 2px;
+  }
+
+  .menu-sub__link {
+    font-size: 14px;
+    line-height: 1.2;
+    color:var(--text-bold);
+    display: block;
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--highlight);
+    }
+  }
+
   &__search-box {
     position: relative;
     display: flex;
@@ -258,10 +348,12 @@
     padding: 2px 10px;
 
     @include maxw($xs) {
-      display: block;
-      position: absolute;
-      top: 120px;
-      left: 0;
+      // display: block;
+      // position: absolute;
+      // top: 120px;
+      // left: 0;
+
+      display: none;
     }
   } 
  
@@ -286,7 +378,7 @@
 
     @include maxw($xs) {
       left: 34px;
-    }
+    } 
 
     &::placeholder {
       font-size: 16px;
