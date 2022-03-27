@@ -24,8 +24,10 @@ body {
   color: var(--text);
   background-color: #F7F7F7;
 
-  &.scroll-block {
-    overflow: hidden;
+  @include maxw($lg) {
+    &.scroll-block {
+      overflow: hidden;
+    }
   }
 } 
 
@@ -87,7 +89,7 @@ body {
   bottom: 16px;
   left: 16px;
 
-}
+} 
 
 .news-tag--world {
   background-color: #3E3EDD;
@@ -103,4 +105,8 @@ body {
 
 .news-tag--lifestyle{
   background-color:#19C22A;
+}
+
+.article-page {
+  background-color: var(--text-white);
 }

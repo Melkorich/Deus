@@ -180,8 +180,8 @@
       position: absolute;
       min-height: 100vh;
       margin: 0 auto;
-      background-color: rgba(#171821, 0.7);
-      backdrop-filter: blur(5px);
+      background-color: rgba(#171821, 0.8);
+      backdrop-filter: blur(6px);
       top: 0;
       left: 0;
       right: 0;
@@ -189,17 +189,16 @@
       padding: 100px 5px;
       z-index: 98;
       transform: translateY(-100%);
+
+      &.active {
+        transform: translateY(0%);
+      }
     }
 
     @include maxw($xs) {
       top: 15px;
-    }
-
-    &.active {
-      transform: translateY(0%);
-    }
+    } 
   }
-
 
   &__item {
     @include maxw($lg) {
@@ -308,19 +307,19 @@
 
   .menu-sub__list--active {
     display: block;
-    top: 15px;
+    top: 20px;
     left: 0;
     z-index: 96;
     min-width: 100px;
     max-width: 100%;
     padding-top: 10px;
     background-color: #F7F7F7;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
 
     @include maxw($lg) {
       position: static;
-      background-color:rgba(#F7F7F7, 0.6);
-      border: 0px 5px 5px 0px;
+      background-color: transparent;
+      box-shadow: none;
     }
   }
 
@@ -334,6 +333,10 @@
     color:var(--text-bold);
     display: block;
     transition: color 0.2s;
+
+    @include maxw($lg) {
+      color: var(--text-white);
+    }
 
     &:hover {
       color: var(--highlight);
