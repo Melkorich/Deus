@@ -40,11 +40,18 @@ body {
 .main {
   flex-grow: 1;
 } 
+
 .container {
   max-width: 1240px;
   padding: 0 10px;
   margin: 0 auto;
 } 
+
+.container-mini {
+  max-width: 758px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
  
 .logo {
   color: var(--text-bold);
