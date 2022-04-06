@@ -4,6 +4,10 @@
   &__item {
     &:nth-child(2) {
       padding-left: 65px;
+
+      @include maxw($md) {
+        padding-left: 0;
+      }
     }
   }
 
@@ -11,6 +15,10 @@
     display: flex;
     padding: 24px 0;
     border-bottom: 1px solid #E3E4E8;
+
+    @include maxw($md) {
+     padding: 15px 0;
+    }
   }
 
   &__img {
@@ -20,6 +28,10 @@
     object-fit: cover;
     border-radius: 50%;
     margin-right: 24px;
+
+    @include maxw($xs) {
+      margin-right: 15px;
+    }
   }
 
   &__content-top {
@@ -72,7 +84,9 @@
     width: 100%;
     resize: vertical;
     display: block;
+    padding: 6px;
     min-height: 185px;
+    max-height: 400px;
     background-color: #F7F7F7;
     border: 1px solid #E3E4E8;
   }
@@ -81,14 +95,27 @@
     padding-top: 24px;
     display: flex;
     margin-bottom: 24px;
+
+    @include maxw($md) {
+      flex-direction: column;
+    }
   }
 
   &__form-col {
     max-width: 230px;
     width: 100%;
 
+    @include maxw($md) {
+      max-width: 100%;
+    }
+
     &:not(:last-child) {
       margin-right: 24px;
+
+      @include maxw($md) {
+       margin-right: 0;
+       margin-bottom: 20px;
+      }
     }
   }
 

@@ -27,6 +27,21 @@
     margin: 0 auto;
     position: relative;
     z-index: 2;
+
+    @include maxw($md) {
+      font-size: 30px;
+      padding: 200px 5px;
+    }
+
+    @include maxw($sm) {
+      font-size: 25px;
+      padding: 180px 5px;
+    }
+
+    @include maxw($xs) {
+      font-size: 24px;
+      padding: 120px 5px;
+    }
   }
 
   &__info {
@@ -37,11 +52,32 @@
     padding-top: 24px;
     display: flex;
     justify-content: center;
-  }
+  } 
 
   &__text {
-    padding: 40px 0 0px;
-    padding-left: 78px;
+    padding: 40px 0px 0px 78px;
+    position: relative;
+
+    @include maxw($md) {
+      padding: 20px 0px 0px 0px;
+    }
+  }
+
+  .social-list--story {
+    position: absolute;
+    left: 0;
+
+    @include maxw($md) {
+      display: none;
+    }
+
+    .social-list__item {
+      margin-bottom: 8px;
+
+      &:not(:last-child) {
+        margin-right: 0px;
+      }
+    } 
   }
 
   &__paragraph {
@@ -52,12 +88,24 @@
 
     &:first-child {
       margin-bottom: 30px;
+
+      @include maxw($xs) {
+        margin-bottom: 25px;
+      }
+    }
+
+    @include maxw($xs) {
+      margin-bottom: 25px;
     }
   }
 
   &__full-par {
     display: block;
     padding-top: 30px;
+
+    @include maxw($xs) {
+      padding-top: 0;
+    }
   }
 
   &__text-link {
@@ -73,12 +121,22 @@
     margin: 0 auto;
     color: var(--text-bold);
     margin-bottom: 44px;
+
+    @include maxw($xs) {
+      font-size: 24px;
+      max-width: 100%;
+    }
   }
 
   &__image {
     width: 243px;
     min-height: 270px;
     display: inline-block;
+
+    @include maxw($xs) {
+      width: 100%;
+      height: 300px;
+    }
   }
 
   &__img {
@@ -90,11 +148,21 @@
   &__image--1 {
     float: left;
     margin-right: 24px;
+
+    @include maxw($xs) {
+      margin-right: 0;
+      float:none;
+    }
   }
 
   &__image--2 {
     float: right;
     margin-left: 24px;
+
+    @include maxw($xs) {
+      margin-left: 0;
+      float:none;
+    }
   }
 
   &__image-descr {
@@ -111,10 +179,12 @@
     font-weight: 400;
     margin-bottom: 31px;
     display: inline-block;
-  }
 
-  &__author {
-    padding-left: 78px;
+    @include maxw($xs) {
+      font-size: 24px;
+      text-align: center;
+      display: block;
+    }
   }
 
 }
@@ -125,6 +195,11 @@
   &__list {
     display: flex;
     padding-left: 78px;
+
+    @include maxw($md) {
+      padding-left: 0;
+      flex-wrap: wrap;
+    }
   }
 
   &__item {
@@ -132,8 +207,16 @@
     padding: 7px 12px;
     background-color: #F7F7F7;
 
+    @include maxw($md) {
+      margin: 8px;
+    }
+
     &:last-child {
       margin-right: 0;
+
+      @include maxw($md) {
+        margin: 8px;
+      }
     }
   }
 
@@ -170,6 +253,11 @@
     padding: 32px;
     border: 1px solid #E3E4E8;
     display: flex;
+
+    @include maxw($xs) {
+      padding: 20px;
+      flex-direction: column;
+    }
   }
 
   &__image {
@@ -177,6 +265,11 @@
     width: 100%;
     height: 92px;
     margin-right: 26px;
+
+    @include maxw($xs) {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
   }
   
   &__img {
@@ -216,12 +309,22 @@
   &__inner {
     padding: 52px 74px;
     background-color: #f7f7f7;
+
+    @include maxw($md) {
+      padding: 40px 25px;
+    }
+  
+    @include maxw($xs) {
+      padding: 40px 10px;
+    }
   }
 
   &__form {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flexb();
+
+    @include maxw($sm) {
+      flex-direction: column;
+    }
   }
 
   &__label {
@@ -230,6 +333,11 @@
     padding-left: 26px;
     position: relative;
     margin-right: 30px;
+
+    @include maxw($sm) {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
 
     &::before {
       content: '';
@@ -246,6 +354,11 @@
 
   &__box {
     display: flex;
+
+    @include maxw($xs) {
+      flex-direction: column;
+      width: 100%;
+    }
   }
 
   &__input {
@@ -257,6 +370,11 @@
     border: 1px solid #E3E4E8;
     border-right: none; 
     background-color: var(--text-white);
+
+    @include maxw($xs) {
+      margin-bottom: 15px;
+      width: 100%;
+    }
   }
 
   &__btn {
@@ -271,6 +389,11 @@
     justify-content: center;
     align-items: center;
     min-width: 80px;
+
+    @include maxw($xs) {
+      width: 100%;
+      display: block;
+    }
   }
 }
 
@@ -280,12 +403,20 @@
     padding: 32px 0 48px;
     border-top: 3px solid #888994;
     border-bottom: 3px solid #888994;
+
+    @include maxw($xs) {
+     padding: 30px 0 35px;
+    }
   }
 
   &__items {
     max-width: 738px;
     width: 100%;
-    margin: 0 -12px;
+    // margin: 0 -12px;
+
+    @include maxw($xs) {
+      max-width: 100%;
+    }
   }
 
   &__item {
@@ -294,6 +425,10 @@
 
   &__title {
     margin-bottom: 32px;
+
+    @include maxw($xs) {
+      font-size: 16px;
+    }
   }
 
   &__link {
@@ -303,7 +438,6 @@
     min-width: 230px;
     color: var(--text-white);
     text-align: center;
-
     background-repeat: no-repeat;
     background-size: cover;
   }
